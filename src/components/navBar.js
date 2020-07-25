@@ -10,7 +10,7 @@ export default function navBar(props) {
         <Layout>
             <Header className="header">
                 <div className="logo" />
-                <img src="https://www.iconarchive.com/show/mono-business-2-icons-by-custom-icon-design/news-icon.html"></img>
+                {/* <img src="https://www.iconarchive.com/show/mono-business-2-icons-by-custom-icon-design/news-icon.html"></img> */}
                 <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['2']}>
                     {props.nav}
                 </Menu>

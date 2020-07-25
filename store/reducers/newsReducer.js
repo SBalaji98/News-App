@@ -39,7 +39,11 @@ export const newsReducer = (state = initialState, action) => {
                 selectSource: action.payload,
                 error: null
             }
-
+        case types.API_ERR:
+            return {
+                ...state,
+                error: action.payload
+            }
 
         default:
             return state

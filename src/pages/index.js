@@ -8,6 +8,8 @@ import SideBar from '../components/sideBar'
 import NewsCard from '../components/newsCard'
 import { SELECT_ARTICLE, SELECT_SOURCE } from '../../store/types';
 
+
+//try class method
 export default function index(props) {
    const dispatch = useDispatch();
 
@@ -31,7 +33,10 @@ export default function index(props) {
    }
 
    const { sources, articles } = useSelector(state => state.news)
-   
+   // console.log(props.news)
+   // const { sources, articles } = props.news
+
+
    return (
       <Navigation>
          <SideBar sources={sources} handleSource={handleSource}>
