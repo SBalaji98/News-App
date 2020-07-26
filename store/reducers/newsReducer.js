@@ -18,7 +18,7 @@ export const newsReducer = (state = initialState, action) => {
                 ...state,
                 sources: action.payload,
                 error: null,
-                loading: false
+                // loading:false
             }
 
         case types.GET_ARTICLES_LIST:

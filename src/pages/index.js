@@ -64,7 +64,6 @@ export default function index(props) {
    )
 }
 index.getInitialProps = async ({ store }) => {
-   // store.dispatch(getSources());
-   getSources();
+   // getSources();
    return;
 }
