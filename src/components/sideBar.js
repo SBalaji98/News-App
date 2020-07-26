@@ -28,7 +28,11 @@ export default function sideBar(props) {
                                 () => {
                                     props.handleSource(cat)
                                 }
-                            }>
+                            }
+                            style={{
+                                fontSize:'15px'
+                            }}
+                            >
                                 {cat.name}
                             </Menu.Item>)
                     }

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Row, Col } from 'antd';
 import { useDispatch, useSelector } from 'react-redux'
 import { getSources, getArticles } from '../../store/actions/newsAction'
@@ -41,9 +41,14 @@ export default function index(props) {
       dispatch(getArticles());
    }
 
-   const { sources, articles, loading } = useSelector(state => state.news)
-
+   const { sources, articles, loading,error } = useSelector(state => state.news)
+   
+   if(error){
+                 alert ('Check Your INTERNET')
+      
+      }
    return (
+      
       <Loader active={loading}>
          <Navigation>
             <SideBar sources={sources} handleSource={handleSource}>
@@ -51,8 +56,8 @@ export default function index(props) {
                   <Row>
                      {
                         articles !== [] && articles.map((article, i) =>
-                           <Col span={12} >
-                              <NewsCard key={i} article={article} handleDetails={handleDetails} />
+                           <Col span={12} key={i}>
+                              <NewsCard  article={article} handleDetails={handleDetails} />
                            </Col>
                         )
                      }

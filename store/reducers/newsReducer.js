@@ -52,7 +52,8 @@ export const newsReducer = (state = initialState, action) => {
         case types.LOADING:
             return {
                 ...state,
-                loading: action.payload
+                loading: action.payload,
+                error: null
             }
 
         default:

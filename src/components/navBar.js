@@ -9,7 +9,8 @@ export default function navBar(props) {
         <Layout>
             <Header className="header">
                 <div className="logo" />
-                <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['2']}>
+                <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['1']}>
+                <Menu.Item key="1" style={{cursor:'default',fontSize:'20px'}}>News Application</Menu.Item>
                     {props.nav}
                 </Menu>
             </Header>
