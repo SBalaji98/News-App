@@ -2,6 +2,7 @@ import React from 'react'
 import { Card } from 'antd'
 import { useRouter } from 'next/router'
 
+
 export default function newsCard(props) {
 	const router = useRouter()
 
@@ -12,7 +13,6 @@ export default function newsCard(props) {
 	}
 
 	return (
-
 		<Card style={{ height: 'auto', width: 650, marginLeft: 30, cursor: 'pointer', marginTop: 20 }} onClick={handleClick}>
 			<h3>
 				{props.article.title}

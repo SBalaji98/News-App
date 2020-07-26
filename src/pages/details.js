@@ -4,12 +4,12 @@ import { Typography } from 'antd';
 import Link from 'next/link';
 import Navigation from '../components/navBar'
 import { useDispatch, useSelector } from 'react-redux'
-const { Header, Content, Footer, Sider } = Layout;
 import Loader from '../components/myLoader'
 import { Row, Col } from 'antd';
 import TopCard from '../components/topCard'
-import { SELECT_ARTICLE, SELECT_SOURCE, LOADING } from '../../store/types';
+import { SELECT_ARTICLE, LOADING } from '../../store/types';
 
+const { Content } = Layout;
 const { Title } = Typography;
 export default function details(props) {
 
@@ -33,14 +33,12 @@ export default function details(props) {
         <Loader active={loading}>
             <Navigation nav={nav}>
                 <Layout>
-                    {/* <Menu theme="dark" mode="horizontal" style={{ padding: 0, position: 'fixed', zIndex: 999, width: '100%' }}>
-    <Menu.Item><Link href='/'><a>HomePage</a></Link></Menu.Item>
-</Menu> */}
-
                     <Row>
                         <Col span={18}>
-                            <Content style={{ margin: '24px 16px 0', overflow: 'auto',
-                            height: '95vh', }}>
+                            <Content style={{
+                                margin: '24px 16px 0', overflow: 'auto',
+                                height: '95vh',
+                            }}>
                                 <Title strong underline={true} style={{ alignContent: "center", color: "#56a832", marginTop: 20 }}>
                                     {selectArticle.source.name ? selectArticle.source.name : "News"}
                                 </Title>
@@ -66,7 +64,7 @@ export default function details(props) {
                                     </h3>
                                     <h3>
                                         {selectArticle.content}
-                                     
+
                                     </h3>
                                     <h3>
                                         For more information visit : <a href={selectArticle.url} target="_blank">
@@ -83,12 +81,12 @@ export default function details(props) {
                             overflow: 'auto',
                             height: '95vh',
                         }}>
-                            <Title strong underline={true} style={{alignContent: "center", color: "#56a832", marginTop: 30 }}>
+                            <Title strong underline={true} style={{ alignContent: "center", color: "#56a832", marginTop: 30 }}>
                                 Related News
                                 </Title>
                             {
-                                articles !== [] && articles.map((article,i) =>
-                                    <TopCard  key={i} article={article} handleDetails={handleDetails} />
+                                articles !== [] && articles.map((article, i) =>
+                                    <TopCard key={i} article={article} handleDetails={handleDetails} />
                                 )
                             }
                         </Col>
@@ -96,7 +94,7 @@ export default function details(props) {
 
                 </Layout>
             </Navigation>
-          
+
         </Loader>
     )
 }

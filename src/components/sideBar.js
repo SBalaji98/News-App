@@ -1,14 +1,11 @@
 
 import React from 'react'
 import { Layout, Menu } from 'antd';
-import { Typography } from 'antd';
-
-const { Title } = Typography;
 import {
     SolutionOutlined
 } from '@ant-design/icons';
 
-const {  Sider } = Layout;
+const { Sider } = Layout;
 
 export default function sideBar(props) {
     const srcArray = [...new Set(props.sources)]
@@ -25,8 +22,6 @@ export default function sideBar(props) {
                 }}
             >
                 <Menu mode="inline" defaultSelectedKeys={['0']}>
-                {/* <Title underline={true} level={5} style={{ color: "#56a832",position:'fixed' }}> News Providers</Title> */}
-
                     {
                         srcArray !== [] && srcArray.map((cat, i) =>
                             <Menu.Item key={i} onClick={

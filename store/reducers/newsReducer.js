@@ -4,7 +4,7 @@ import * as types from '../types'
 const initialState = {
     sources: [],
     articles: [],
-    loading:true,
+    loading: true,
     selectArticle: {},
     selectSource: {},
     error: null
@@ -18,14 +18,14 @@ export const newsReducer = (state = initialState, action) => {
                 ...state,
                 sources: action.payload,
                 error: null,
-                loading:false
+                loading: false
             }
 
         case types.GET_ARTICLES_LIST:
             return {
                 ...state,
                 articles: action.payload,
-                loading:false,
+                loading: false,
                 error: null
             }
 
@@ -34,7 +34,7 @@ export const newsReducer = (state = initialState, action) => {
                 ...state,
                 selectArticle: action.payload,
                 error: null,
-                loading:false
+                loading: false
             }
 
         case types.SELECT_SOURCE:
@@ -47,12 +47,12 @@ export const newsReducer = (state = initialState, action) => {
             return {
                 ...state,
                 error: action.payload,
-                loading:false
+                loading: false
             }
         case types.LOADING:
             return {
                 ...state,
-                loading:action.payload
+                loading: action.payload
             }
 
         default:

@@ -9,7 +9,6 @@ import NewsCard from '../components/newsCard'
 import { SELECT_ARTICLE, SELECT_SOURCE, LOADING } from '../../store/types';
 import Loader from '../components/myLoader'
 
-
 //try class method
 export default function index(props) {
    const dispatch = useDispatch();
@@ -21,7 +20,7 @@ export default function index(props) {
    const handleDetails = (article) => {
       dispatch({
          type: LOADING,
-         payload:true
+         payload: true
 
       })
       dispatch({
@@ -33,7 +32,7 @@ export default function index(props) {
    const handleSource = (source) => {
       dispatch({
          type: LOADING,
-         payload:true
+         payload: true
       })
       dispatch({
          type: SELECT_SOURCE,
@@ -42,30 +41,25 @@ export default function index(props) {
       dispatch(getArticles());
    }
 
-   const { sources, articles,loading } = useSelector(state => state.news)
-   // console.log(props.news)
-   // const { sources, articles } = props.news
+   const { sources, articles, loading } = useSelector(state => state.news)
 
-   // if(loading){
-   //     <Loader/>
-   // }
    return (
-<Loader active={loading}>
-      <Navigation>
-         <SideBar sources={sources} handleSource={handleSource}>
-            <MainLayout>
-               <Row>
-                  {
-                     articles !== [] && articles.map((article,i) =>
-                        <Col span={12} >
-                           <NewsCard key={i} article={article} handleDetails={handleDetails} />
-                        </Col>
-                     )
-                  }
-               </Row>
-            </MainLayout>
-         </SideBar>
-      </Navigation>
+      <Loader active={loading}>
+         <Navigation>
+            <SideBar sources={sources} handleSource={handleSource}>
+               <MainLayout>
+                  <Row>
+                     {
+                        articles !== [] && articles.map((article, i) =>
+                           <Col span={12} >
+                              <NewsCard key={i} article={article} handleDetails={handleDetails} />
+                           </Col>
+                        )
+                     }
+                  </Row>
+               </MainLayout>
+            </SideBar>
+         </Navigation>
       </Loader>
    )
 }
