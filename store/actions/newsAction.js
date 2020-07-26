@@ -20,8 +20,8 @@ export const getSources = () => async dispatch => {
         dispatch(getArticles())
     } catch (error) {
         dispatch({
-            type:types.API_ERR,
-            payload:error
+            type: types.API_ERR,
+            payload: error
         })
     }
 
@@ -31,24 +31,24 @@ export const getSources = () => async dispatch => {
 export const getArticles = () => async dispatch => {
     try {
         const source = store.getState().news.selectSource.id
-    console.log("getArticles")
-    console.log(["source"],source)
-    const res = await fetch( "https://newsapi.org/v2/top-headlines?sources=" +
-           source  +
+        console.log("getArticles")
+        console.log(["source"], source)
+        const res = await fetch("https://newsapi.org/v2/top-headlines?sources=" +
+            source +
             "&apiKey=09b85c2b35414d739a144b205fd0df0c")
-    const data = await res.json()
-    const articleArray = data.articles.map((article) => {
-        return article;
-    })
-    dispatch({
-        type: types.GET_ARTICLES_LIST,
-        payload: articleArray
-    })
+        const data = await res.json()
+        const articleArray = data.articles.map((article) => {
+            return article;
+        })
+        dispatch({
+            type: types.GET_ARTICLES_LIST,
+            payload: articleArray
+        })
     } catch (error) {
         dispatch({
-            type:types.API_ERR,
-            payload:error
+            type: types.API_ERR,
+            payload: error
         })
     }
-    
+
 }

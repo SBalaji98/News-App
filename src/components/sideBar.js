@@ -24,7 +24,7 @@ export default function sideBar(props) {
                     left: 0,
                 }}
             >
-                <Menu mode="inline" defaultSelectedKeys={['1']}>
+                <Menu mode="inline" defaultSelectedKeys={['0']}>
                 {/* <Title underline={true} level={5} style={{ color: "#56a832",position:'fixed' }}> News Providers</Title> */}
 
                     {

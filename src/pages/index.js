@@ -6,7 +6,8 @@ import Navigation from '../components/navBar'
 import MainLayout from '../components/mainLayout'
 import SideBar from '../components/sideBar'
 import NewsCard from '../components/newsCard'
-import { SELECT_ARTICLE, SELECT_SOURCE } from '../../store/types';
+import { SELECT_ARTICLE, SELECT_SOURCE, LOADING } from '../../store/types';
+import Loader from '../components/myLoader'
 
 
 //try class method
@@ -19,6 +20,11 @@ export default function index(props) {
 
    const handleDetails = (article) => {
       dispatch({
+         type: LOADING,
+         payload:true
+
+      })
+      dispatch({
          type: SELECT_ARTICLE,
          payload: article
       })
@@ -26,26 +32,33 @@ export default function index(props) {
 
    const handleSource = (source) => {
       dispatch({
+         type: LOADING,
+         payload:true
+      })
+      dispatch({
          type: SELECT_SOURCE,
          payload: source
       })
       dispatch(getArticles());
    }
 
-   const { sources, articles } = useSelector(state => state.news)
+   const { sources, articles,loading } = useSelector(state => state.news)
    // console.log(props.news)
    // const { sources, articles } = props.news
 
-
+   // if(loading){
+   //     <Loader/>
+   // }
    return (
+<Loader active={loading}>
       <Navigation>
          <SideBar sources={sources} handleSource={handleSource}>
             <MainLayout>
                <Row>
                   {
-                     articles !== [] && articles.map((article) =>
+                     articles !== [] && articles.map((article,i) =>
                         <Col span={12} >
-                           <NewsCard article={article} handleDetails={handleDetails} />
+                           <NewsCard key={i} article={article} handleDetails={handleDetails} />
                         </Col>
                      )
                   }
@@ -53,6 +66,7 @@ export default function index(props) {
             </MainLayout>
          </SideBar>
       </Navigation>
+      </Loader>
    )
 }
 index.getInitialProps = async ({ store }) => {

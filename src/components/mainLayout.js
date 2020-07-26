@@ -7,7 +7,7 @@ const { Title } = Typography;
 
 export default function mainLayout(props) {
     return (
-
+      
         <Layout className="site-layout" style={{
             // marginLeft: 250,
             overflow: 'auto',

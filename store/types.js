@@ -3,3 +3,4 @@ export const GET_ARTICLES_LIST = "GET_ARTICLES_LIST";
 export const SELECT_ARTICLE = "SELECT_ARTICLE";
 export const SELECT_SOURCE = "SELECT_SOURCE";
 export const API_ERR = "API_ERR";
+export const LOADING = "LOADING"
