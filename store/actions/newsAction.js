@@ -4,7 +4,7 @@ import store from '../store';
 // Fetch source and point first source and fetch article 
 export const getSources = () => async dispatch => {
     try {
-        const res = await fetch("https://newsapi.org/v2/sources?language=en&apiKey=09b85c2b35414d739a144b205fd0df0c")
+        const res = await fetch("https://newsapi.org/v2/sources?language=en&apiKey="+ process.env.REACT_APP_NEWS_API_KEY)
         const data = await res.json()
         const sourceArray = data.sources.map((source) => {
             return ({ id: source.id, name: source.name })
@@ -35,7 +35,7 @@ export const getArticles = () => async dispatch => {
         console.log(["source"], source)
         const res = await fetch("https://newsapi.org/v2/top-headlines?sources=" +
             source +
-            "&apiKey=09b85c2b35414d739a144b205fd0df0c")
+            "&apiKey="+ process.env.REACT_APP_NEWS_API_KEY)
         const data = await res.json()
         const articleArray = data.articles.map((article) => {
             return article;

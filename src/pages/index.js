@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { Row, Col } from 'antd';
 import { useDispatch, useSelector } from 'react-redux'
 import { getSources, getArticles } from '../../store/actions/newsAction'
@@ -13,9 +13,9 @@ import Loader from '../components/myLoader'
 export default function index(props) {
    const dispatch = useDispatch();
 
-   useEffect(() => {
-      dispatch(getSources());
-   }, [])
+   // useEffect(() => {
+   //    dispatch(getSources());
+   // }, [])
 
    const handleDetails = (article) => {
       dispatch({
@@ -64,6 +64,7 @@ export default function index(props) {
    )
 }
 index.getInitialProps = async ({ store }) => {
-   // getSources();
+   // store.dispatch(getSources());
+   getSources();
    return;
 }
