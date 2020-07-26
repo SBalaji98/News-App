@@ -39,7 +39,7 @@ export default function details(props) {
                                 margin: '24px 16px 0', overflow: 'auto',
                                 height: '95vh',
                             }}>
-                                <Title strong underline={true} style={{ alignContent: "center", color: "#56a832", marginTop: 20 }}>
+                                <Title strong level={2} underline={true} style={{ alignContent: "center", color: "#56a832", marginTop: 20 }}>
                                     {selectArticle.source.name ? selectArticle.source.name : "News"}
                                 </Title>
 
@@ -81,7 +81,7 @@ export default function details(props) {
                             overflow: 'auto',
                             height: '95vh',
                         }}>
-                            <Title strong underline={true} style={{ alignContent: "center", color: "#56a832", marginTop: 30 }}>
+                            <Title strong level={2} underline={true} style={{ alignContent: "center", color: "#56a832", marginTop: 30 }}>
                                 Related News
                                 </Title>
                             {

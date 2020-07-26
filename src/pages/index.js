@@ -13,9 +13,9 @@ import Loader from '../components/myLoader'
 export default function index(props) {
    const dispatch = useDispatch();
 
-   useEffect(() => {
-      dispatch(getSources());
-   }, [])
+   // useEffect(() => {
+   //    dispatch(getSources());
+   // }, [])
 
    const handleDetails = (article) => {
       dispatch({
@@ -64,6 +64,7 @@ export default function index(props) {
    )
 }
 index.getInitialProps = async ({ store }) => {
-   store.dispatch(getSources());
-   return store.getState();
+   // store.dispatch(getSources());
+   getSources();
+   return;
 }
