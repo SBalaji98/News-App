@@ -13,7 +13,7 @@ export default function newsCard(props) {
 	}
 
 	return (
-		<Card style={{ height: 'auto', width: 650, marginLeft: 30, cursor: 'pointer', marginTop: 20 }} onClick={handleClick}>
+		<Card style={{ height: 'auto', width: 500, marginLeft: 30, cursor: 'pointer', marginTop: 20 }} onClick={handleClick}>
 			<h3>
 				{props.article.title}
 			</h3>

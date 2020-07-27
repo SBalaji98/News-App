@@ -10,7 +10,7 @@ export default function newsCard(props) {
 
 	return (
 
-		<Card style={{ height: 'auto', width: 400, cursor: 'pointer', marginTop: 20 }} onClick={handleClick}>
+		<Card style={{ height: 'auto', width: 300, cursor: 'pointer', marginTop: 20 }} onClick={handleClick}>
 
 			<img
 				className="card-img-top"
