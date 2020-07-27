@@ -5,8 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
-  },
+    "start": "next start -p $PORT",
+    "heroku-postbuild": "npm run build"  },
   "dependencies": {
     "@ant-design/icons": "^4.2.1",
     "@zeit/next-less": "^1.0.1",
